@@ -1,0 +1,284 @@
+# _   _            ____        _
+#| \ | | ___ _   _/ ___| _   _| |__
+#|  \| |/ _ \ | | \___ \| | | | '_ \
+#| |\  |  __/ |_| |___) | |_| | |_) |
+#|_| \_|\___|\__, |____/ \__,_|_.__/
+#            |___/
+
+# Разработчик - https://vk.com/k_gra4ev
+
+# -------------------------------------
+# Плейсхолдеры:
+# %neysub_has%
+# %neysub_has_colored%
+# -------------------------------------
+# Пермишены: neysub.default, neysub.help, neysub.buy, neysub.give, neysub.take, neysub.info
+
+Settings:
+
+  enabled: true #Включена ли подписка на сервере
+  time: 30 #Время на которое будет выдаваться подписка (в днях)
+  price: 300 #Цена подписки (PlayerPoints)
+  cooldown:
+    enabled: true
+    time: 10 #Cooldown на команду в секундах
+    text:
+      - ""
+      - " &#ff5959[✘] &fПодождите еще {time} сек. "
+      - ""
+    sound:
+      enabled: true
+      type: BLOCK_NOTE_BLOCK_HAT
+      volume: 0.7
+      pitch: 1.0
+
+Permissions: #Права, которые выдаются при приобретении подписки и забираются после ее окончания (LuckPerms)
+  enabled: true
+  list:
+    - "cmi.command.hat"
+
+Placeholders:
+  yes_: "&aДа"
+  no_: "&cНет"
+  no_colored:
+    yes_: "Да"
+    no_: "Нет"
+
+Commands: #Команды, которые выполняются после приобретения подписки
+  enabled: true
+  list:
+    - "gm 1 {player_name}"
+
+Messages: #Сообщения плагина (Поддерживается HEX, {player_name}, {time} - переменные)
+
+  no_console:
+    text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &cЭту команду можно использовать только от имени игрока!"
+
+  no_permission:
+    text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &cУ вас нет прав!"
+
+  help:
+    enabled: true
+    text:
+      - ""
+      - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fПомощь: "
+      - " &7> &e/neysub help &7- &fПоказывает это меню "
+      - " &7> &e/neysub buy &7- &fПокупка подписки "
+      - " &7> &e/neysub give [игрок] &7- &fВыдача подписки "
+      - " &7> &e/neysub take [игрок] &7- &fОтбор подписки "
+      - " &7> &e/neysub info [игрок] &7- &fИнформация о подписке игрока "
+      - ""
+    sound:
+      enabled: true
+      type: BLOCK_NOTE_BLOCK_HAT
+      volume: 0.7
+      pitch: 1.0
+    other:
+      title:
+        enabled: true
+        title: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+        subtitle: "&fПривета!"
+        fadeIn: 20
+        stay: 40
+        fadeOut: 20
+      actionbar:
+        enabled: true
+        time: 10
+        text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fЗдратути"
+      bossbar:
+        enabled: true
+        time: 10
+        text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+        style: SOLID
+        color: YELLOW
+    valid:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fИспользуйте - &e/neysub help"
+      other:
+        title:
+          enabled: true
+          title: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          subtitle: "&fПривета!"
+          fadeIn: 20
+          stay: 40
+          fadeOut: 20
+        actionbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fЗдратути"
+        bossbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          style: SOLID
+          color: YELLOW
+
+  buy:
+    enabled: true
+    text:
+      - ""
+      - " &#7dff59[✔] &f{player_name}, вы успешно купили подписку на {time} д. "
+      - ""
+    sound:
+      enabled: true
+      type: BLOCK_NOTE_BLOCK_HAT
+      volume: 0.7
+      pitch: 1.0
+    other:
+      title:
+        enabled: true
+        title: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+        subtitle: "&fПривета!"
+        fadeIn: 20
+        stay: 40
+        fadeOut: 20
+      actionbar:
+        enabled: true
+        time: 10
+        text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fЗдратути"
+      bossbar:
+        enabled: true
+        time: 10
+        text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+        style: SOLID
+        color: YELLOW
+    valid:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fИспользуйте - &e/neysub buy"
+      other:
+        title:
+          enabled: true
+          title: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          subtitle: "&fПривета!"
+          fadeIn: 20
+          stay: 40
+          fadeOut: 20
+        actionbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fЗдратути"
+        bossbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          style: SOLID
+          color: YELLOW
+    no_money:
+      text:
+        - ""
+        - " &#ff5959[✘] &fНа вашем балансе недостаточно денег! "
+        - ""
+      other:
+        title:
+          enabled: true
+          title: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          subtitle: "&fПривета!"
+          fadeIn: 20
+          stay: 40
+          fadeOut: 20
+        actionbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fЗдратути"
+        bossbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          style: SOLID
+          color: YELLOW
+    already_purchased:
+      text:
+        - ""
+        - " &#ff5959[✘] &fВы уже купили подписку! "
+        - " &fОсталось {time} д. "
+        - ""
+      other:
+        title:
+          enabled: true
+          title: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          subtitle: "&fПривета!"
+          fadeIn: 20
+          stay: 40
+          fadeOut: 20
+        actionbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fЗдратути"
+        bossbar:
+          enabled: true
+          time: 10
+          text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+          style: SOLID
+          color: YELLOW
+
+  take:
+    enabled: true
+    text:
+      - ""
+      - " &#ffc859[⛄] &fВы забрали подписку у игрока {player_name} "
+      - ""
+    valid:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fИспользуйте - &e/neysub take [игрок]"
+    not_online:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &cИгрок не в сети!"
+    not_sub:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &cИгрок {player_name} итак без подписки!"
+
+  info:
+    enabled: true
+    text:
+      - ""
+      - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fИнформация: "
+      - " &7> &fНик: {player_name} "
+      - " &7> &fПодписка: {sub} "
+      - ""
+    valid:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fИспользуйте - &e/neysub info"
+    not_online:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &cИгрок не в сети!"
+
+  give:
+    enabled: true
+    text:
+      - ""
+      - " &#599cff[⛄] &fВы выдали подписку игроку {player_name} "
+      - ""
+    valid:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fИспользуйте - &e/neysub give [игрок]"
+    not_online:
+      text:
+        - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &cИгрок не в сети!"
+
+  default:
+    enabled: true
+    text:
+      - "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fИспользуйте - &e/neysub <give/take/info/buy/help>"
+    sound:
+      enabled: true
+      type: BLOCK_NOTE_BLOCK_HAT
+      volume: 0.7
+      pitch: 1.0
+    other:
+      title:
+        enabled: true
+        title: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+        subtitle: "&fПривета!"
+        fadeIn: 20
+        stay: 40
+        fadeOut: 20
+      actionbar:
+        enabled: true
+        time: 10
+        text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb &7» &fЗдратути"
+      bossbar:
+        enabled: true
+        time: 10
+        text: "&#64FF4B&lN&#83FE4C&le&#A2FD4C&ly&#C1FC4D&lS&#E0FB4D&lu&#FFFA4E&lb"
+        style: SOLID
+        color: YELLOW

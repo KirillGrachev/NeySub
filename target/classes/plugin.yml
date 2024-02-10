@@ -1,0 +1,7 @@
+name: NeySub
+version: '1.0.0-BETA'
+main: com.ney.neysub.NeySub
+api-version: 1.16
+depend: [ PlaceholderAPI, LuckPerms, PlayerPoints ]
+commands:
+  neysub: {}
